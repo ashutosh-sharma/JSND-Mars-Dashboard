@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="/client.js"></script>
+
+    <style>
+        a:hover {
+            background-color: slategrey;
+            color: tomato;
+        }
+
+        a:active {
+            background-color: royalblue;
+            color: peru;
+        }
+
+        .nav-tabs .nav-link {
+            border: 1px solid;
+        }
+
+        .jumbotron {
+            background: black;
+            color: white;
+            max-height: 27vh;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1>NASA - MARS Rover</h1>
+        <hr>
+        <p>Please select <b> Rover Name </b> to get the latest photos and information.</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <nav class="font-weight-bold">
+                    <div class="nav nav-tabs nav-fill" role="tablist">
+                        <a class="nav-item nav-link " data-toggle="tab" href="#" role="tab" aria-controls="nav-home"
+                            aria-selected="true" onclick="processUI('curiosity',createDynamicUI)">Curiosity</a>
+                        <a class="nav-item nav-link" data-toggle="tab" href="#" role="tab" aria-controls="nav-profile"
+                            aria-selected="false" onclick="processUI('opportunity',createDynamicUI)">Opportunity</a>
+                        <a class="nav-item nav-link" data-toggle="tab" href="#" role="tab" aria-controls="nav-contact"
+                            aria-selected="false" onclick="processUI('spirit',createDynamicUI)">Spirit </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <hr>
+        <div id="content">
+            <div class="card card-body text-success">
+                <div id="errorBox">
+                </div>
+                <div id="roverMetaInfo" class="row">
+                    <div class="col-md-4">
+                        <b>Rover Name: </b><label id="roverName"></label>
+                    </div>
+                    <br>
+                    <div class="col-md-4">
+                        <b>Launch Date: </b> <label id="launchDate"></label>
+                    </div>
+                    <br>
+                    <div class="col-md-4">
+                        <b> Date: </b> <label id="landingDate"></label> <br>
+                    </div>
+                    <div class="col-md-4">
+                        <b>Status of the rover:</b> <label id="status"></label> <br>
+                    </div>
+                    <div class="col-md-4">
+                        <b>Recent date of photos: </b> <label id="recentDate"></label> <br>
+                    </div>
+                </div>
+            </div>
+            <div id="roverImages" class="row">
+            </div>
+        </div>
+</body>
+
+</html>
